@@ -1,5 +1,5 @@
 # react-basics-labs
 
-test
+test2
 
 KAMI!
