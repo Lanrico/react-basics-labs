@@ -18,7 +18,7 @@ const Task = (props) => {
         //     <button onClick={props.markDone} className="doneButton">Done</button>
         //     <button onClick={props.deleteTask} className="deleteButton">Delete</button>
         // </div>
-        <Grid itme key={props.id} xs={12} md={4}>
+        <Grid item key={props.id} xs={12} md={4} >
             <Card sx={{backgroundColor: props.done ? 'lightgrey' : 'lightblue', padding: '20px'}}>
                 <CardHeader
                     title={props.title}
@@ -31,17 +31,22 @@ const Task = (props) => {
                 />
                 <CardContent>
                     <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'baseline',
-                        mb: 2,
-                        padding: '20px'
-                    }}
-                    >
-                    <Typography component="p" variant="subtitle2" color="text.primary">
-                        Due: {props.deadline}
-                    </Typography>
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'baseline',
+                            mb: 2,
+                            padding: '20px'
+                        }}
+                        >
+                        <Typography component="p" variant="subtitle2" color="text.primary">
+                            Due: {props.deadline}
+                        </Typography>
+                    </Box>
+                    <Box textAlign='center'>
+                        <Button variant='contained' color={props.priority=="low"? "success": props.priority=="medium"? "warning":"error"}>
+                            {props.priority}
+                        </Button>
                     </Box>
                     <Typography
                         component="p"
