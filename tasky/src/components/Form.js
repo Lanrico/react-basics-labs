@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
 
 const AddTaskForm = (props) => {
 
@@ -56,18 +58,22 @@ const AddTaskForm = (props) => {
             />
         </div>
         <div>
-            <Select
+            <TextField
                 required
+                labelId="demo-multiple-checkbox-label"
                 name="priority"
                 label="Priority"
                 InputLabelProps={{ shrink: true }}
+                input={<OutlinedInput label="123123123" />}
                 type="select"
+                select="on"
                 onChange={(event) => props.change(event)}
             >
                 <MenuItem value='low'>Low</MenuItem>
                 <MenuItem value='medium'>Medium</MenuItem>
                 <MenuItem value='high'>High</MenuItem>
-            </Select>
+            </TextField>
+            
         </div>
         <div>
             <TextField
